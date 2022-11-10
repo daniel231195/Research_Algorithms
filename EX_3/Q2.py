@@ -21,6 +21,8 @@ def lastcall(func):
     16
     >>> func_add(2)
     'i already told you that the answer is 4'
+    >>> func_div(4)
+    'i already told you that the answer is 2.0'
     """
 
     def wrapper(*args, **kwargs):

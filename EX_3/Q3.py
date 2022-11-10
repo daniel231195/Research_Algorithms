@@ -74,6 +74,11 @@ if __name__ == '__main__':
         [[7, 8, 9, 99], [10, 11, 12, 122]],
         [[13, 14, 15, 155], [16, 17, 18, 188]],
     )
+    mylist2 = List(
+        ['a','b','c'],
+        [[1,2,3],['q','w']],
+        [[13, 14, 15, 155], [16, 17, 18, 188]],
+    )
     mylist.append([1, 2, 3])
     print("1) the result of append  [[[1, 2, 3, 33], [4, 5, 6, 66]], [[7, 8, 9, 99], [10, 11, 12, 122]], [[13, 14, 15, 155], [16, 17, 18, 188]], [1, 2, 3]] -----> ",mylist)
     print("2) the result is 66 ----->  ",mylist[0,1,3])
@@ -82,3 +87,6 @@ if __name__ == '__main__':
     print("5) the result is 1 ----->  ", mylist[3, 1])
     print("6) the result is [[1, 2, 3, 33], [4, 5, 6, 66]] ----->  ", mylist[0])
     print("7) the result is [1, 2, 3] ----->  ", mylist[3])
+    print("8) the result is b ----->  ", mylist2[0,1])
+    print("9) the result is ['q', 'w'] ----->  ", mylist2[1,1])
+    print("10) the result is 3 ----->  ", mylist2[1,0,2])
