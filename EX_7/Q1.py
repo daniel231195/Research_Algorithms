@@ -7,6 +7,11 @@ t2 = -1
 check_numpy = {}
 check_cvxpy = {}
 def my_timer(orig_func):
+    """
+    take from class
+    :param orig_func:
+    :return: run time of func
+    """
     import time
     def wrapper(*args, **kwargs):
         global t2
@@ -20,15 +25,31 @@ def my_timer(orig_func):
 
 @my_timer
 def numpy_solve(A,B):
+    """
+    :param A: matrix A
+    :param B: ans matrix B
+    :return: solve of matrix A*x=B
+    """
     return np.linalg.solve(A, B)
 
 @my_timer
 def cvxpy_solve(x,objective,constraints):
+    """
+    :param x: variables
+    :param objective: sum of A@x-B matrix
+    :param constraints:
+    :return: ans of this problem
+    """
     prob = cp.Problem(objective, constraints)
     prob.solve()
     return x.value
 
 def solve_random_linear_equation(i):
+    """
+        make matrix and send to solve func
+    :param i:
+    :return:
+    """
     global t2
     global check_numpy
     global check_cvxpy
@@ -51,6 +72,10 @@ def solve_random_linear_equation(i):
 
 
 def print_graph():
+    """
+        draw the solve in graph
+    :return:
+    """
     global check_cvxpy
     global check_numpy
     plt.plot(check_cvxpy.keys(),check_cvxpy.values(),'-ok',color='red')
