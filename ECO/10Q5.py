@@ -59,7 +59,14 @@ def check_fairness(total_budget: float, citizen_votes: list[list[float]], budget
     :param citizen_votes:
     :param budget:
     :return:
-    >>>
+    >>> citizen_votes = [[100, 0, 0], [0, 0, 100], [100, 0, 0], [0, 0, 100], [100, 0, 0], [0, 0, 100], [100, 0, 0], [0, 0, 100], [100, 0, 0], [0, 0, 100]]
+    >>> citizen_votes2 = [[50, 50, 0], [0, 50, 50]]
+    >>> budget = compute_budget(100, citizen_votes)
+    >>> budget2 = compute_budget(100, citizen_votes2)
+    >>> check_fairness(100,citizen_votes ,budget)
+    True
+    >>> check_fairness(100,citizen_votes2 ,budget2)
+    False
     """
     num_citizens = len(citizen_votes)
     num_items = len(citizen_votes[0])
